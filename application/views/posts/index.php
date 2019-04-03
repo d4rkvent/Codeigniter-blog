@@ -16,12 +16,14 @@
           <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title"> <?php echo $post['title']; ?></h2>
-            <p class="card-text"><?php echo $post['body']; ?></p>
+            <p class="card-text"><?php echo word_limiter($post['body'], 60); ?></p>
             <a href="<?php echo site_url('/posts/'.$post['slug']); ?>" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-             <?php echo $post['created_at'] ?>
-            <!-- <a href="#">Start Bootstrap</a> -->
+             <?php echo $post['created_at']; ?> In
+             <strong>
+              <a href="#"> <?php echo strtoupper($post['name']); ?></a>
+            </strong>
           </div>
         </div>
 <?php endforeach; ?>

@@ -12,5 +12,14 @@
     <textarea id="editor1" type="password" class="form-control" name="body" placeholder="Enter Content"></textarea>
   </div>
 
+  <div class="form-group">
+  <label>Categoris</label>
+  <select name="category_id" class="form-control">
+  <?php foreach ($categories as $category): ?>
+    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>            
+  <?php endforeach; ?>
+  </select>
+  </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
